@@ -9,22 +9,22 @@ require 'date'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 categories = [
-  'Доски и лыжи',
-  'Крепления',
-  'Ботинки',
-  'Одежда',
-  'Инструменты',
-  'Разное'
+  {name: 'Доски и лыжи', slug: 'boards'},
+  {name: 'Крепления', slug: 'attachment'},
+  {name: 'Ботинки', slug: 'boots'},
+  {name: 'Одежда', slug: 'clothing'},
+  {name: 'Инструменты', slug: 'tools'},
+  {name: 'Разное', slug: 'other'}
 ]
 
 categories.each do |category|
-  Category.create(name: category)
+  Category.create(category)
 end
 
 users = [
-  { reg_date: DateTime.now - 10, email: 'ignat.v@gmail.com', name: 'Игнат', password: '123', avatar_url: 'img/ava1.png', contact: 'Скайп' },
-  { reg_date: DateTime.now - 50, email: 'kitty_93@li.ru', name: 'Леночка', password: '123', avatar_url: 'img/ava2.png', contact: 'Гитхаб' },
-  { reg_date: DateTime.now - 100, email: 'warrior07@mail.ru', name: 'Руслан', password: '123', avatar_url: 'img/ava3.png', contact: 'ВК' },
+  {reg_date: DateTime.now - 10, email: 'ignat.v@gmail.com', name: 'Игнат', password: '123', avatar_url: 'img/ava1.png', contact: 'Скайп'},
+  {reg_date: DateTime.now - 50, email: 'kitty_93@li.ru', name: 'Леночка', password: '123', avatar_url: 'img/ava2.png', contact: 'Гитхаб'},
+  {reg_date: DateTime.now - 100, email: 'warrior07@mail.ru', name: 'Руслан', password: '123', avatar_url: 'img/ava3.png', contact: 'ВК'},
 ]
 
 users.each do |user|

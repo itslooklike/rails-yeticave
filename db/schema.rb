@@ -10,13 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_21_075610) do
+ActiveRecord::Schema.define(version: 2019_04_21_084547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bets", force: :cascade do |t|
+    t.datetime "date"
+    t.decimal "sum"
+    t.decimal "user_id"
+    t.decimal "lot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lots", force: :cascade do |t|
+    t.datetime "create_date"
+    t.string "name"
+    t.string "description"
+    t.string "image_url"
+    t.decimal "start_price"
+    t.datetime "finish_date"
+    t.decimal "bet_step"
+    t.decimal "author_id"
+    t.decimal "winner_id"
+    t.decimal "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

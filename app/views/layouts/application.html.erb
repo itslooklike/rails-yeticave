@@ -38,29 +38,16 @@
 <footer class="main-footer">
   <nav class="nav">
     <ul class="nav__list container">
+    <% @footer_categories.each do |category| %>
       <li class="nav__item">
-        <a href="all-lots.html">Доски и лыжи</a>
+        <a href="all-lots.html"><%= category.name %></a>
       </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Крепления</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Ботинки</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Одежда</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Инструменты</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Разное</a>
-      </li>
+    <% end %>
     </ul>
   </nav>
   <div class="main-footer__bottom container">
     <div class="main-footer__copyright">
-      <p>© 2017, YetiCave</p>
+      <p>© 2017 - <%= Time.current.year %>, YetiCave</p>
       <p>Интернет-аукцион сноубордического и горнолыжного снаряжения</p>
     </div>
     <div class="main-footer__social social">

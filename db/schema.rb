@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2019_04_21_084547) do
   enable_extension "plpgsql"
 
   create_table "bets", force: :cascade do |t|
-    t.datetime "date"
     t.decimal "sum"
     t.decimal "user_id"
     t.decimal "lot_id"
@@ -32,22 +31,20 @@ ActiveRecord::Schema.define(version: 2019_04_21_084547) do
   end
 
   create_table "lots", force: :cascade do |t|
-    t.datetime "create_date"
     t.string "name"
     t.string "description"
     t.string "image_url"
     t.decimal "start_price"
-    t.datetime "finish_date"
     t.decimal "bet_step"
     t.decimal "author_id"
     t.decimal "winner_id"
     t.decimal "category_id"
+    t.datetime "finish_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "reg_date"
     t.string "email"
     t.string "name"
     t.string "password"

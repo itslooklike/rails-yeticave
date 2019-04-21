@@ -31,7 +31,7 @@ lots = [
   {
     name: '2014 Rossignol District Snowboard',
     description: 'Пустое описание',
-    image_url: 'img/lot-1.jpg',
+    image_url: '/img/lot-1.jpg',
     start_price: 10_999,
     bet_step: 200,
     author_id: 1,
@@ -41,7 +41,7 @@ lots = [
   {
     name: 'DC Ply Mens 2016/2017 Snowboard',
     description: 'Пустое описание',
-    image_url: 'img/lot-2.jpg',
+    image_url: '/img/lot-2.jpg',
     start_price: 15_999,
     bet_step: 250,
     author_id: 1,
@@ -51,7 +51,7 @@ lots = [
   {
     name: 'Крепления Union Contact Pro 2015 года размер L/XL',
     description: 'Пустое описание',
-    image_url: 'img/lot-3.jpg',
+    image_url: '/img/lot-3.jpg',
     start_price: 15_999,
     bet_step: 250,
     author_id: 1,
@@ -61,7 +61,7 @@ lots = [
   {
     name: 'Ботинки для сноуборда DC Mutiny Charocal',
     description: 'Пустое описание',
-    image_url: 'img/lot-4.jpg',
+    image_url: '/img/lot-4.jpg',
     start_price: 15_999,
     bet_step: 250,
     author_id: 1,
@@ -71,7 +71,7 @@ lots = [
   {
     name: 'Куртка для сноуборда DC Mutiny Charocal',
     description: 'Пустое описание',
-    image_url: 'img/lot-5.jpg',
+    image_url: '/img/lot-5.jpg',
     start_price: 15_999,
     bet_step: 250,
     author_id: 1,
@@ -81,7 +81,7 @@ lots = [
   {
     name: 'Маска Oakley Canopy',
     description: 'Пустое описание',
-    image_url: 'img/lot-6.jpg',
+    image_url: '/img/lot-6.jpg',
     start_price: 15_999,
     bet_step: 250,
     author_id: 1,

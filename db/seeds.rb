@@ -35,7 +35,7 @@ lots = [
     start_price: 10_999,
     bet_step: 200,
     author_id: 1,
-    category_id: 1,
+    category: Category.order('RANDOM()').first,
     finish_date: Time.current + 300
   },
   {
@@ -45,7 +45,7 @@ lots = [
     start_price: 15_999,
     bet_step: 250,
     author_id: 1,
-    category_id: 1,
+    category: Category.order('RANDOM()').first,
     finish_date: Time.current + 300
   },
   {
@@ -55,7 +55,7 @@ lots = [
     start_price: 15_999,
     bet_step: 250,
     author_id: 1,
-    category_id: 1,
+    category: Category.order('RANDOM()').first,
     finish_date: Time.current + 300
   },
   {
@@ -65,7 +65,7 @@ lots = [
     start_price: 15_999,
     bet_step: 250,
     author_id: 1,
-    category_id: 1,
+    category: Category.order('RANDOM()').first,
     finish_date: Time.current + 300
   },
   {
@@ -75,7 +75,7 @@ lots = [
     start_price: 15_999,
     bet_step: 250,
     author_id: 1,
-    category_id: 1,
+    category: Category.order('RANDOM()').first,
     finish_date: Time.current + 300
   },
   {
@@ -85,7 +85,7 @@ lots = [
     start_price: 15_999,
     bet_step: 250,
     author_id: 1,
-    category_id: 1,
+    category: Category.order('RANDOM()').first,
     finish_date: Time.current + 300
   }
 ]

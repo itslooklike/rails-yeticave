@@ -38,10 +38,11 @@ ActiveRecord::Schema.define(version: 2019_04_21_084547) do
     t.decimal "bet_step"
     t.decimal "author_id"
     t.decimal "winner_id"
-    t.decimal "category_id"
     t.datetime "finish_date"
+    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_lots_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|

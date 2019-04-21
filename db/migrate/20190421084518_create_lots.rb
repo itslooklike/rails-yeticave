@@ -8,8 +8,8 @@ class CreateLots < ActiveRecord::Migration[5.2]
       t.numeric :bet_step
       t.numeric :author_id
       t.numeric :winner_id
-      t.numeric :category_id
       t.datetime :finish_date
+      t.references :category
       t.timestamps
     end
   end

@@ -10,6 +10,19 @@ class LotsController < ApplicationController
   end
 
   def create
-    @categories = Category.all
+    @lot = Lot.new lot_params
+    if @lot.save
+      redirect_to @lot
+    else
+      # приходится пробрасывать категории для меню
+      @categories = Category.all
+      render 'new'
+    end
+  end
+
+  private
+
+  def lot_params
+    params.require(:lot).permit(:name, :description, :start_price, :bet_step, :finish_date, :category_id)
   end
 end

@@ -1,0 +1,74 @@
+<nav class="nav">
+  <ul class="nav__list container">
+    <% @categories.each do |category| %>
+      <li class="nav__item">
+        <a href="all-lots.html"><%= category.name %></a>
+      </li>
+    <% end %>
+  </ul>
+</nav>
+
+
+<%= form_for @lot, url: {action: "create"}, html: {class: "form form--add-lot container form--invalid"} do |f| %>
+  <h2>Добавление лота</h2>
+  <div class="form__container-two">
+    <div class="form__item form__item--invalid"> <!-- form__item--invalid -->
+      <label for="lot_name">Наименование</label>
+      <%= f.text_field :name, placeholder: "Введите наименование лота" %>
+      <span class="form__error">Введите наименование лота</span>
+    </div>
+    <div class="form__item">
+      <label for="category">Категория</label>
+      <select id="category" name="category">
+        <option>Выберите категорию</option>
+        <% @categories.each do |category| %>
+          <option><%= category.name %></option>
+        <% end %>
+      </select>
+      <span class="form__error">Выберите категорию</span>
+    </div>
+  </div>
+
+  <div class="form__item form__item--wide">
+    <label for="lot_description">Описание</label>
+    <%= f.text_area :description, placeholder: "Введите наименование лота" %>
+    <span class="form__error">Напишите описание лота</span>
+  </div>
+
+  <div class="form__item form__item--file"> <!-- form__item--uploaded -->
+    <label>Изображение</label>
+    <div class="preview">
+      <button class="preview__remove" type="button">x</button>
+      <div class="preview__img">
+        <img src="/img/avatar.jpg" width="113" height="113" alt="Изображение лота">
+      </div>
+    </div>
+    <div class="form__input-file">
+      <%= f.file_field :image, class: "visually-hidden" %>
+      <label for="lot_image">
+        <span>+ Добавить</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="form__container-three">
+    <div class="form__item form__item--small">
+      <label for="lot_start_price">Начальная цена</label>
+      <%= f.number_field :start_price, placeholder: 0 %>
+      <span class="form__error">Введите начальную цену</span>
+    </div>
+    <div class="form__item form__item--small">
+      <label for="lot_bet_step">Шаг ставки</label>
+      <%= f.number_field :bet_step, placeholder: 0 %>
+      <span class="form__error">Введите шаг ставки</span>
+    </div>
+    <div class="form__item">
+      <label for="lot_finish_date">Дата окончания торгов</label>
+      <%= f.date_field :finish_date, placeholder: 0, class: 'form__input-date' %>
+      <span class="form__error">Введите дату завершения торгов</span>
+    </div>
+  </div>
+
+  <span class="form__error form__error--bottom">Пожалуйста, исправьте ошибки в форме.</span>
+  <%= f.submit "Добавить лот", class: "button" %>
+<% end %>

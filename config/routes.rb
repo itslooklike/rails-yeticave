@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-  get 'lots/new' => 'lots#new'
+  get 'lots/new'
   get 'lots/:id' => 'lots#show', as: :lot
   post 'lots/new' => 'lots#create'
 

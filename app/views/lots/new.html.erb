@@ -15,13 +15,15 @@
     <div class="form__item<%= @lot.errors[:name].empty? ? '' : ' form__item--invalid' %>">
       <%= f.label :name, 'Наименование' %>
       <%= f.text_field :name, placeholder: "Введите наименование лота" %>
+
       <% unless @lot.errors[:name].empty? %>
         <span class="form__error">Введите наименование лота</span>
       <% end %>
     </div>
     <div class="form__item">
       <%= f.label :category_id, 'Категория' %>
-      <%= f.select :category_id, options_for_select(@categories.map {|item| [item.name, item.id]}) %>
+      <%= f.select :category_id, options_for_select(@categories.map {|item| [item.name, item.id]}), include_blank: true %>
+
       <% unless @lot.errors[:category_id].empty? %>
         <span class="form__error">Выберите категорию</span>
       <% end %>
@@ -46,7 +48,9 @@
     </div>
     <div class="form__input-file">
       <%= f.file_field :image_url, class: "visually-hidden" %>
-      <%= f.label :image_url, '+ Добавить' %>
+      <%= f.label :image_url do  %>
+        <span>+ Добавить</span>
+      <% end %>
     </div>
   </div>
 

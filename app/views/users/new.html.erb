@@ -27,7 +27,6 @@
     <% end %>
   </div>
 
-
   <div class="form__item<%= @user.errors[:name].empty? ? '' : ' form__item--invalid' %>">
     <%= f.label :name, 'Имя*' %>
     <%= f.text_field :name, placeholder: "Введите имя" %>
@@ -43,7 +42,6 @@
       <span class="form__error">Напишите как с вами связаться</span>
     <% end %>
   </div>
-
 
   <div class="form__item form__item--file form__item--last">
     <label>Аватар</label>
@@ -63,6 +61,7 @@
   </div>
 
   <span class="form__error form__error--bottom">Пожалуйста, исправьте ошибки в форме.</span>
+
   <%= f.submit "Зарегистрироваться", class: "button" %>
 
   <%= link_to 'Уже есть аккаунт', users_login_url, class: 'text-link' %>

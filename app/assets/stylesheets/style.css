@@ -88,6 +88,10 @@ h2 {
   padding: 0 15px;
 }
 
+.main-content-layout {
+  padding-bottom: 40px;
+}
+
 .button {
   display: block;
   padding: 9px 32px;

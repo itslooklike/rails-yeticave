@@ -33,17 +33,17 @@
     <nav class="user-menu">
       <ul class="user-menu__list">
         <li class="user-menu__item">
-          <a href="sign-up.html">Регистрация</a>
+          <%= link_to 'Регистрация', users_new_url %>
         </li>
         <li class="user-menu__item">
-          <a href="login.html">Вход</a>
+          <%= link_to 'Вход', users_login_url %>
         </li>
       </ul>
     </nav>
   </div>
 </header>
 
-<main class="container">
+<main class="container main-content-layout">
 
 <%= yield %>
 

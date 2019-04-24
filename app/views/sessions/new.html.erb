@@ -1,4 +1,4 @@
-<%= form_for :session, url: login_path, html: {class: "form container #{@session.errors.empty? ? '' : ' form--invalid' }"} do |f| %>
+<%= form_for :session, url: login_path, html: {class: "form container"} do |f| %>
   <h2>Вход</h2>
 <!--  <div class="form__item<%#= @session.errors[:email].empty? ? '' : ' form__item--invalid' %>">-->
     <%= f.label :email, 'E-mail*' %>

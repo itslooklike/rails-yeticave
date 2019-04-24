@@ -1,4 +1,6 @@
 class LotsController < ApplicationController
+  before_action :require_user, only: [:new]
+
   def show
     @categories = Category.all
     @lot = Lot.find params[:id]

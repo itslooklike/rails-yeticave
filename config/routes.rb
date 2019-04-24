@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  get 'login' => 'sessions#login', as: :login
+  post 'login' => 'sessions#create'
 
   get 'users/new'
-  get 'users/login'
   post 'users/new' => 'users#create'
-  post 'users/login' => 'users#sign_in'
 
   get 'lots/new'
   get 'lots/:id' => 'lots#show', as: :lot

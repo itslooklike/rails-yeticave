@@ -1,12 +1,5 @@
 require 'date'
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'bcrypt'
 
 categories = [
   {name: 'Доски и лыжи', slug: 'boards'},
@@ -17,15 +10,15 @@ categories = [
   {name: 'Разное', slug: 'other'}
 ]
 
-categories.each { |item| Category.create(item) }
+categories.each {|item| Category.create(item)}
 
 users = [
-  {email: 'ignat.v@gmail.com', name: 'Игнат', password_digest: '123', avatar_url: 'img/ava1.png', contact: 'Скайп'},
-  {email: 'kitty_93@li.ru', name: 'Леночка', password_digest: '123', avatar_url: 'img/ava2.png', contact: 'Гитхаб'},
-  {email: 'warrior07@mail.ru', name: 'Руслан', password_digest: '123', avatar_url: 'img/ava3.png', contact: 'ВК'},
+  {email: 'ignat.v@gmail.com', name: 'Игнат', password: '1', avatar_url: 'img/ava1.png', contact: 'Скайп'},
+  {email: 'kitty_93@li.ru', name: 'Леночка', password: '1', avatar_url: 'img/ava2.png', contact: 'Гитхаб'},
+  {email: '1', name: 'Руслан', password: '1', avatar_url: 'img/ava3.png', contact: 'ВК'},
 ]
 
-users.each { |item| User.create(item) }
+users.each {|item| User.create(item)}
 
 lots = [
   {
@@ -90,4 +83,13 @@ lots = [
   }
 ]
 
-lots.each { |item| Lot.create(item) }
+lots.each {|item| Lot.create(item)}
+
+bets = [
+  {sum: 200, user_id: User.all.last.id, lot_id: Lot.all.first.id},
+  {sum: 300, user_id: User.all.first.id, lot_id: Lot.all.first.id},
+  {sum: 400, user_id: User.all.last.id, lot_id: Lot.all.first.id},
+  {sum: 500, user_id: User.all.first.id, lot_id: Lot.all.first.id}
+]
+
+bets.each {|item| Bet.create(item)}

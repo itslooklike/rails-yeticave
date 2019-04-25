@@ -26,10 +26,10 @@
           <div class="lot__state">
             <div class="lot__rate">
               <span class="lot__amount">Стартовая цена</span>
-              <span class="lot__cost"><%= number_with_precision lot.start_price, {delimiter: " ", precision: 0} %>
+              <span class="lot__cost"><%= format_price lot.start_price %>
                 <b class="rub">р</b></span>
             </div>
-            <div class="lot__timer timer"><%= lot.finish_date.to_s :short %></div>
+            <div class="lot__timer timer"><%= format_date lot.finish_date %></div>
           </div>
         </div>
       </li>

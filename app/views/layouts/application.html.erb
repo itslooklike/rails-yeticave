@@ -20,14 +20,14 @@
       <input type="search" name="search" placeholder="Поиск лота">
       <input class="main-header__search-btn" type="submit" name="find" value="Найти">
     </form>
-    <% if logged_in? %>
+    <% if @current_user %>
       <%= link_to 'Добавить лот', lots_new_url, class: 'main-header__add-lot button' %>
       <nav class="user-menu">
         <div class="user-menu__image">
-          <img src="/img/user.jpg" width="40" height="40" alt="Пользователь">
+          <img src="<%= @current_user.avatar_url ? @current_user.avatar_url : '/img/user.jpg' %>" width="40" height="40" alt="Пользователь">
         </div>
         <div class="user-menu__logged">
-          <p>Константин</p>
+          <p><%= @current_user.name || @current_user.email %></p>
           <%= link_to 'Выйти', logout_url, method: :delete %>
         </div>
       </nav>

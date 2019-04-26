@@ -5,6 +5,8 @@ class LotsController < ApplicationController
     @categories = Category.all
     @lot = Lot.find params[:id]
     @total_price = Bet.where(lot_id: params[:id]).sum(:sum) + @lot.start_price
+
+    @bet = Bet.new
   end
 
   def new

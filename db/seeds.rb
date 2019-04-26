@@ -13,9 +13,9 @@ categories = [
 categories.each {|item| Category.create(item)}
 
 users = [
-  {email: 'ignat.v@gmail.com', name: 'Игнат', password: '1', avatar_url: 'img/ava1.png', contact: 'Скайп'},
-  {email: 'kitty_93@li.ru', name: 'Леночка', password: '1', avatar_url: 'img/ava2.png', contact: 'Гитхаб'},
-  {email: '1', name: 'Руслан', password: '1', avatar_url: 'img/ava3.png', contact: 'ВК'},
+  {email: 'ignat.v@gmail.com', name: 'Игнат', password: '1', avatar_url: 'img/ava1.jpg', contact: 'Скайп'},
+  {email: 'kitty_93@li.ru', name: 'Леночка', password: '1', avatar_url: 'img/ava2.jpg', contact: 'Гитхаб'},
+  {email: '1', name: 'Руслан', password: '1', avatar_url: 'img/ava3.jpg', contact: 'ВК'},
 ]
 
 users.each {|item| User.create(item)}

@@ -1,13 +1,3 @@
-<nav class="nav">
-  <ul class="nav__list container">
-    <% @categories.each do |category| %>
-      <li class="nav__item">
-        <a href="all-lots.html"><%= category.name %></a>
-      </li>
-    <% end %>
-  </ul>
-</nav>
-
 <%= form_for @user, url: {action: "create"}, html: {class: "form container #{@user.errors.empty? ? '' : ' form--invalid' }"} do |f| %>
   <h2>Регистрация нового аккаунта</h2>
 

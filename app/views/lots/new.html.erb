@@ -1,13 +1,4 @@
-<nav class="nav">
-  <ul class="nav__list container">
-    <% @categories.each do |category| %>
-      <li class="nav__item">
-        <a href="all-lots.html"><%= category.name %></a>
-      </li>
-    <% end %>
-  </ul>
-</nav>
-
+<%= render 'layouts/categories_menu'%>
 
 <%= form_for @lot, url: {action: "create"}, html: {class: "form form--add-lot container #{@lot.errors.empty? ? '' : ' form--invalid' }"} do |f| %>
   <h2>Добавление лота</h2>

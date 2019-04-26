@@ -4,6 +4,7 @@ class LotsController < ApplicationController
   def show
     @categories = Category.all
     @lot = Lot.find params[:id]
+    # @total_price = Bet.where(lot_id === params[:id])
   end
 
   def new

@@ -2,7 +2,8 @@
   "name": "rails-yeticave",
   "private": true,
   "scripts": {
-    "d": "rails db:drop && rails db:create && rails db:migrate && rails db:seed && rails s"
+    "d": "rails db:drop && rails db:create && rails db:migrate && rails db:seed",
+    "ds": "npm run d && && rails s"
   },
   "dependencies": {}
 }

@@ -21,7 +21,7 @@
       <input class="main-header__search-btn" type="submit" name="find" value="Найти">
     </form>
     <% if @current_user %>
-      <%= link_to 'Добавить лот', lots_new_url, class: 'main-header__add-lot button' %>
+      <%= link_to 'Добавить лот', new_lot_path, class: 'main-header__add-lot button' %>
       <nav class="user-menu">
         <div class="user-menu__image">
           <img src="<%= @current_user.avatar_url ? @current_user.avatar_url : '/img/user.jpg' %>" width="40" height="40" alt="Пользователь">
@@ -35,7 +35,7 @@
       <nav class="user-menu">
         <ul class="user-menu__list">
           <li class="user-menu__item">
-            <%= link_to 'Регистрация', users_new_url %>
+            <%= link_to 'Регистрация', new_user_path %>
           </li>
           <li class="user-menu__item">
             <%= link_to 'Вход', login_url %>
@@ -95,7 +95,7 @@
         </svg>
       </a>
     </div>
-    <%= link_to 'Добавить лот', lots_new_url, class: 'main-footer__add-lot button' %>
+    <%= link_to 'Добавить лот', new_lot_path, class: 'main-footer__add-lot button' %>
     <div class="main-footer__developed-by">
       <span class="visually-hidden">Разработано:</span>
       <a class="logo-academy" href="https://htmlacademy.ru/intensive/php">HTML Academy

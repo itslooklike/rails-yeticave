@@ -1,18 +1,13 @@
 class BetsController < ApplicationController
   def create
-    # достать лот ид, и юзера
-    @bet = User.new(bet_params, user_id: @current_user.id)
-
-    if @bet.save
-      redirect_to @lot
-    else
-      render 'new'
-    end
+    p '✅'
+    p params
+    p '🛑'
   end
 
   private
 
   def bet_params
-    params.require(:bet).permit(:summ)
+    params.require(:bet).permit(:sum)
   end
 end

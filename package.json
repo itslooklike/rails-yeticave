@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "d": "rails db:drop && rails db:create && rails db:migrate && rails db:seed",
-    "ds": "npm run d && && rails s"
+    "ds": "npm run d && rails s"
   },
   "dependencies": {}
 }

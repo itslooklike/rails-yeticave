@@ -22,12 +22,14 @@
             Мин. ставка <span><%= format_price @lot.bet_step %> р</span>
           </div>
         </div>
-        <%= form_with model: @bet, class: 'lot-item__form' do |f| %>
-          <p class="lot-item__form-item">
-            <%= f.label :sum, 'Ваша ставка' %>
-            <%= f.number_field :sum, placeholder: @lot.bet_step, step: 50, min: 0 %>
-          </p>
-          <%= f.submit 'Сделать ставку', class: 'button' %>
+        <% if @current_user %>
+          <%= form_with model: @bet, class: 'lot-item__form' do |f| %>
+            <p class="lot-item__form-item">
+              <%= f.label :sum, 'Ваша ставка' %>
+              <%= f.number_field :sum, placeholder: @lot.bet_step, step: 50, min: 0 %>
+            </p>
+            <%= f.submit 'Сделать ставку', class: 'button' %>
+          <% end %>
         <% end %>
       </div>
       <div class="history">

@@ -4,14 +4,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy', as: :logout
 
-  get 'users/new'
-  post 'users/new', to: 'users#create'
-
-  get 'lots/new'
-  get 'lots/:id', to: 'lots#show', as: :lot
-  post 'lots/new', to: 'lots#create'
-
-  post 'bets', to: 'bets#create'
+  resources :bets, :lots, :users
 
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

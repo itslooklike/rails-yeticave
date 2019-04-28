@@ -28,6 +28,10 @@
               <%= f.label :sum, 'Ваша ставка' %>
               <%= f.number_field :sum, placeholder: @lot.bet_step, step: 50, min: 0 %>
             </p>
+            <% unless @bet.errors[:sum].empty? %>
+              <span class="form__error">неверная сумма ставки</span>
+            <% end %>
+            <%= hidden_field_tag 'id', @lot.id %>
             <%= f.submit 'Сделать ставку', class: 'button' %>
           <% end %>
         <% end %>

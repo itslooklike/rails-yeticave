@@ -6,6 +6,7 @@ class LotsController < ApplicationController
     @lot = Lot.find params[:id]
     @total_price = Bet.where(lot_id: params[:id]).sum(:sum) + @lot.start_price
 
+    # @bet = @lot.bets.build(user: @current_user)
     @bet = Bet.new
   end
 
@@ -31,6 +32,14 @@ class LotsController < ApplicationController
   private
 
   def lot_params
-    params.require(:lot).permit(:name, :description, :start_price, :bet_step, :finish_date, :category_id, :image_url)
+    params.require(:lot).permit(
+      :name,
+      :description,
+      :start_price,
+      :bet_step,
+      :finish_date,
+      :category_id,
+      :image_url
+    )
   end
 end

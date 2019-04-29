@@ -22,8 +22,9 @@
             Мин. ставка <span><%= format_price @lot.bet_step %> р</span>
           </div>
         </div>
+
         <% if @current_user %>
-          <%= form_with model: @bet, class: 'lot-item__form' do |f| %>
+          <%= form_with model: @bet, class: 'lot-item__form', local: true do |f| %>
             <p class="lot-item__form-item">
               <%= f.label :sum, 'Ваша ставка' %>
               <%= f.number_field :sum, placeholder: @lot.bet_step, step: 50, min: 0 %>
@@ -31,14 +32,16 @@
             <% unless @bet.errors[:sum].empty? %>
               <span class="form__error">неверная сумма ставки</span>
             <% end %>
-            <%= hidden_field_tag 'id', @lot.id %>
+            <%= f.hidden_field :lot_id, value: @lot.id %>
             <%= f.submit 'Сделать ставку', class: 'button' %>
           <% end %>
         <% end %>
+
       </div>
       <div class="history">
-        <h3>История ставок (<span><%= @lot.bets.size %></span>)</h3>
+        <h3>История ставок (<span><%= @lot.bets.reload.size %></span>)</h3>
         <table class="history__list">
+
           <% @lot.bets.each do |bet| %>
             <tr class="history__item">
               <td class="history__name"><%= bet.user.name %></td>

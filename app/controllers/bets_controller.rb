@@ -1,14 +1,15 @@
 class BetsController < ApplicationController
   def create
-    @lot = Lot.find params[:id]
     @bet = Bet.new bet_params
+    @bet.user = current_user
 
     if @bet.save
-      redirect_to lot_url(@lot)
+      redirect_to lot_url(@bet.lot)
     else
       @categories = Category.all
-      @total_price = Bet.where(lot_id: params[:id]).sum(:sum) + @lot.start_price
-      # redirect_to lot_url(@lot)
+      @lot = @bet.lot
+      @total_price = Bet.where(lot_id: params[:lot_id]).sum(:sum) + @lot.start_price
+
       render 'lots/show'
     end
   end
@@ -16,9 +17,6 @@ class BetsController < ApplicationController
   private
 
   def bet_params
-    bet_p = params.require(:bet).permit(:sum)
-    lot_p = params.require(:id)
-    hash_p = { lot_id: lot_p, user_id: @current_user.id, sum: bet_p[:sum] }
-    hash_p
+    params.require(:bet).permit(:sum, :lot_id)
   end
 end

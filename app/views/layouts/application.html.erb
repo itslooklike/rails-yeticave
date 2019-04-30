@@ -16,10 +16,12 @@
     <a class="main-header__logo" href="/">
       <img src="/img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
     </a>
-    <form class="main-header__search" method="get" action="https://echo.htmlacademy.ru">
-      <input type="search" name="search" placeholder="Поиск лота">
-      <input class="main-header__search-btn" type="submit" name="find" value="Найти">
-    </form>
+
+    <%= search_form_for(@q, url: root_path, html: { class: 'main-header__search' }) do |f| %>
+      <%= f.search_field(:name_cont, placeholder: "Поиск лота") %>
+      <%= f.submit(class: 'main-header__search-btn') %>
+    <% end %>
+
     <% if @current_user %>
       <%= link_to 'Добавить лот', new_lot_path, class: 'main-header__add-lot button' %>
       <nav class="user-menu">

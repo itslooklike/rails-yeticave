@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def format_date(date)
-    date.to_s :short
+    I18n.localize date, format: "%d %b %H:%M"
   end
 end

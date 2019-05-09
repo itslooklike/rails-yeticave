@@ -3,7 +3,6 @@ class CreateLots < ActiveRecord::Migration[5.2]
     create_table :lots do |t|
       t.string :name
       t.string :description
-      t.string :image_url
       t.numeric :start_price
       t.numeric :bet_step
       t.numeric :author_id

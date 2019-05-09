@@ -17,9 +17,6 @@ class LotsController < ApplicationController
   def create
     @lot = Lot.new lot_params
 
-    image_link = Uploader.upload(params[:lot][:image_url])
-    @lot.image_url = image_link
-
     if @lot.save
       redirect_to @lot
     else
@@ -38,7 +35,7 @@ class LotsController < ApplicationController
       :bet_step,
       :finish_date,
       :category_id,
-      :image_url
+      :image
     )
   end
 end

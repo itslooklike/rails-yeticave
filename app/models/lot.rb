@@ -1,6 +1,7 @@
 class Lot < ApplicationRecord
   belongs_to :category
   has_many :bets
+  has_one_attached :image
 
   validates(
     :name,
@@ -9,7 +10,6 @@ class Lot < ApplicationRecord
     :bet_step,
     :finish_date,
     :category_id,
-    :image_url,
     presence: true
   )
 end

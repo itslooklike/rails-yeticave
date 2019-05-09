@@ -1,7 +1,6 @@
 <section class="promo">
   <h2 class="promo__title">Нужен стафф для катки?</h2>
-  <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное
-    снаряжение.</p>
+  <p class="promo__text">На&nbsp;нашем интернет-аукционе ты&nbsp;найдёшь самое эксклюзивное сноубордическое и&nbsp;горнолыжное снаряжение.</p>
   <ul class="promo__list">
     <% @categories.each do |category| %>
       <li class="promo__item promo__item--<%= category.slug %>">
@@ -18,7 +17,7 @@
     <% @lots.each do |lot| %>
       <li class="lots__item lot">
         <div class="lot__image">
-          <img src="<%= lot.image_url %>" width="350" height="260" alt="<%= lot.name %>">
+          <%= image_tag lot.image, size: "350x260", alt: lot.name %>
         </div>
         <div class="lot__info">
           <span class="lot__category"><%= lot.category.name %></span>

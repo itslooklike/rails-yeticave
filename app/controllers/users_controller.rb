@@ -8,10 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
 
-    if @user.valid?
-      avatar = params[:user][:avatar_url]
-      @user.avatar_url = Uploader.upload(avatar) if avatar
-      @user.save
+    if @user.save
       # session[:user_id] = @user.id
       # redirect_to '/'
       redirect_to '/login'
@@ -23,7 +20,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :name, :password, :avatar_url, :contact)
+    params.require(:user).permit(:email, :name, :password, :image, :contact)
   end
 
   def fetch_categories

@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 2019_05_09_070707) do
     t.string "email"
     t.string "name"
     t.string "password_digest"
-    t.string "avatar_url"
     t.string "contact"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

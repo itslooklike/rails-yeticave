@@ -4,7 +4,7 @@
   <ul class="promo__list">
     <% @categories.each do |category| %>
       <li class="promo__item promo__item--<%= category.slug %>">
-        <%= link_to category.name, new_lot_path, class: "promo__link" %>
+        <%= link_to(category.name, root_path(category: category.id), class: "promo__link") %>
       </li>
     <% end %>
   </ul>

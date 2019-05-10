@@ -2,7 +2,7 @@
   <ul class="nav__list">
     <% @categories.each do |category| %>
       <li class="nav__item">
-        <%= link_to category.name, new_lot_path %>
+        <%= link_to(category.name, root_path(category: category.id)) %>
       </li>
     <% end %>
   </ul>

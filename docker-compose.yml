@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:9.1
+    environment:
+      POSTGRES_DB: rails-yeticave
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: rails-yeticave
+    ports:
+      - "5432:5432"
